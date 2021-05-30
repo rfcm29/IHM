@@ -3,11 +3,14 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>computadores</ion-title>
+    <ion-title>Computadores</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-note class="ion-padding-horizontal">Home > Computadores</ion-note>
+
   <ion-grid fixed>
     <ion-row class="ion-align-items-center">
       <ion-col class="ion-text-center" size="4">
@@ -30,8 +33,10 @@
     NOVIDADES
   </ion-button>
 
-  <ion-grid fixed>
+  <ion-grid fixed class="ion-no-padding">
+
     <ion-row>
+
       <ion-col size="6">
         <ion-card button (click)="cardClick()">
           <ion-img [src]="image"></ion-img>
@@ -48,6 +53,7 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
+
       <ion-col size="6">
         <ion-card button (click)="cardClick()">
           <ion-img [src]="image"></ion-img>
@@ -64,6 +70,84 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
+
     </ion-row>
+
+    <ion-row>
+
+      <ion-col size="6">
+        <ion-card button (click)="cardClick()">
+          <ion-img [src]="image"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Awesome Title</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Awesome content
+            <ion-card-content class="ion-text-end">
+              <ion-text>
+                99,99€
+              </ion-text>
+            </ion-card-content>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+      <ion-col size="6">
+        <ion-card button (click)="cardClick()">
+          <ion-img [src]="image"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Awesome Title</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Awesome content
+            <ion-card-content class="ion-text-end">
+              <ion-text>
+                99,99€
+              </ion-text>
+            </ion-card-content>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col size="6">
+        <ion-card button (click)="cardClick()">
+          <ion-img [src]="image"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Awesome Title</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Awesome content
+            <ion-card-content class="ion-text-end">
+              <ion-text>
+                99,99€
+              </ion-text>
+            </ion-card-content>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+      <ion-col size="6">
+        <ion-card button (click)="cardClick()">
+          <ion-img [src]="image"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Awesome Title</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Awesome content
+            <ion-card-content class="ion-text-end">
+              <ion-text>
+                99,99€
+              </ion-text>
+            </ion-card-content>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+    </ion-row>
+
   </ion-grid>
 </ion-content>
