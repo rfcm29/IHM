@@ -1,0 +1,27 @@
+<ion-content>
+ <ion-grid>
+   <ion-row class="ion-padding-top" class="ion-text-center">
+     <ion-col size="12" class="ion-text-center">
+      <ion-text color= "primary" class="ion-text-center" class="ion-padding-top">
+        <h1>INOVATECH</h1>
+      </ion-text>
+    </ion-col>
+   </ion-row>
+ </ion-grid>
+
+ <form [formGroup]="IHMForm" (ngSubmit)="submitForm()" novalidate>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="text" placeholder="Email" required></ion-input>
+  </ion-item>
+  <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email-errors?.required">
+    Email necessario
+  </ion-text>
+  <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email-errors?.pattern">
+    Email necessario
+  </ion-text>
+
+ </form>
+
+</ion-content>
