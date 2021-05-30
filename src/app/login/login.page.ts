@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.IHMForm= this.formBuilder.group({
 
-      email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z]{2,4}$')]],
+      email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z]+\\.[a-z]{2,4}$')]],
       password: ['', [Validators.required]]
     });
   }

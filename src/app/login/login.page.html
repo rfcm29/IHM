@@ -2,7 +2,7 @@
  <ion-grid>
    <ion-row class="ion-padding-top" class="ion-text-center">
      <ion-col size="12" class="ion-text-center">
-      <ion-text color= "primary" class="ion-text-center" class="ion-padding-top">
+      <ion-text class="ion-text-center" class="ion-padding-top">
         <h1>INOVATECH</h1>
       </ion-text>
     </ion-col>
@@ -15,12 +15,26 @@
     <ion-label position="floating">Email</ion-label>
     <ion-input type="text" placeholder="Email" required></ion-input>
   </ion-item>
-  <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email-errors?.required">
+  <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.required">
     Email necessario
   </ion-text>
-  <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email-errors?.pattern">
-    Email necessario
+  <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.pattern">
+    Email incorreto
   </ion-text>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="text" placeholder="Password" required></ion-input>
+  </ion-item>
+  <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.required">
+    Password necessaria
+  </ion-text>
+
+  <ion-row>
+    <ion-col >
+      <ion-button type="submit" color="primary" expand="block">Log in</ion-button>
+    </ion-col>
+  </ion-row>
 
  </form>
 
