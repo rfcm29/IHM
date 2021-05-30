@@ -46,7 +46,11 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },  {
+    path: 'show-info',
+    loadChildren: () => import('./show-info/show-info.module').then( m => m.ShowInfoPageModule)
   }
+
 
 ];
 
