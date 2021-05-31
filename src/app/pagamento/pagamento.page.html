@@ -21,7 +21,59 @@
       </ion-item>
     </ion-item>
 
+    <form [formGroup]="MetodosForm" (ngSubmit)="submitForm()" novalidate>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Numero do cartão de credito</ion-label>
+        <ion-input type="number" formControlName="numCartao" placeholder="Nº cartão de credito" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.required">
+        Numero do cartão necessario
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.minLength">
+        Numero do cartão incorreto
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.maxLength">
+        Numero do cartão incorreto
+      </ion-text>
     
+      <ion-item lines="full">
+        <ion-label position="floating">Data de Expiração</ion-label>
+        <ion-input type="date" formControlName="dataExp" laceholder="Data Expiração" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.required">
+        Data de expiração necessaria
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.pattern">
+        Data de expiração incorreta
+      </ion-text>
+
+      <ion-item lines="full">
+        <ion-label position="floating">CVV</ion-label>
+        <ion-input type="number" formControlName="CVV" laceholder="CVV" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.required">
+        CVV necessario
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.pattern">
+        CVV incorreta
+      </ion-text>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Nome do proprietario</ion-label>
+        <ion-input type="text" formControlName="nomeProp" laceholder="Nome Proprietario" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.required">
+        Nome do proprietario necessario
+      </ion-text>
+    
+      <ion-row>
+        <ion-col >
+          <ion-button type="submit" color="primary" expand="block">Log in</ion-button>
+        </ion-col>
+      </ion-row>
+    
+     </form>
     
 
 </ion-content>

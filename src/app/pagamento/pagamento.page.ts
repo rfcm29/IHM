@@ -20,12 +20,12 @@ export class PagamentoPage implements OnInit {
 
   ngOnInit() {
 
-    this.MetodosForm= this.formBuilder.group({
+    this.MetodosForm = this.formBuilder.group({
 
         numCartao: ['', [Validators.required], [Validators.minLength(16)], [Validators.maxLength(16)]],
         dataExp: ['', [Validators.required], [Validators.pattern('^[0-1]+[1-9]+/[0-9]+[0-9]')]],
         CVV:['', [Validators.required], [Validators.pattern('^[0-9]+[0-9]+[0-9]')]],
-        nomeProp:['', [[Validators.required]]
+        nomeProp:['', [Validators.required]]
     });
 
   }
