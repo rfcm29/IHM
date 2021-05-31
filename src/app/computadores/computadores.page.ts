@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-computadores',
   templateUrl: './computadores.page.html',
   styleUrls: ['./computadores.page.scss'],
 })
-export class ComputadoresPage implements OnInit {
+export class ComputadoresPage {
 
-  constructor() { }
+  teste = {marca: 'teste',
+            modelo: 'teste1'}
 
-  ngOnInit() {
+  constructor(private route: Router ) { }
+
+  cardClick() {
+    this.route.navigate(['/show-info'], {queryParams: this.teste})
   }
 
 }

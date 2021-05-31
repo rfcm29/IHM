@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,16 +9,17 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginPage implements OnInit {
 
-  IHMForm: FormGroup;
+  LoginForm: FormGroup;
   isSubmitted: boolean;
+  email: "teste@email.com";
+  password: 'password';
 
-  constructor(public formBuilder: FormBuilder) {
+  constructor(public formBuilder: FormBuilder, private router: Router) {
     this.isSubmitted= false;
    }
 
   ngOnInit() {
-    this.IHMForm= this.formBuilder.group({
-
+    this.LoginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z]+\\.[a-z]{2,4}$')]],
       password: ['', [Validators.required]]
     });
@@ -25,16 +27,16 @@ export class LoginPage implements OnInit {
 
   submitForm(){
     this.isSubmitted = true;
-    if(!this.IHMForm.valid){
+    if(!this.LoginForm.valid){
       return false;
     } else{
-      console.log(this.IHMForm.value);
+      this.router.navigate(['/home'])
     }
   }
 
 
   get formControls(){
-    return this.IHMForm.controls;
+    return this.LoginForm.controls;
   }
 
 }
