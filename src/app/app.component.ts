@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -15,5 +16,9 @@ export class AppComponent {
     { title: 'Redes e Comunicação', url: '/redes-comunicacao'},
     { title: 'Eletrodomésticos', url: '/eletrodomesticos'},
   ];
-  constructor() {}
+  constructor(private route: Router) {}
+
+  perfilClick() {
+    this.route.navigate(['/perfil']);
+  }
 }
