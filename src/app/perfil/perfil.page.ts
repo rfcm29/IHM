@@ -13,12 +13,7 @@ export class PerfilPage {
 
   constructor(private route: Router ) { }
 
-
-/* Escrevi elementoClick porque o Métodos de Pagamento ainda não está clickable*/
-  elementoClick() {
-    this.route.navigate(['/pagamento'], {queryParams: this.teste});
+  onClick(){
+    this.route.navigate(['/pagamento']);
   }
-
-  
-
 }

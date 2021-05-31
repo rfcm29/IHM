@@ -4,9 +4,13 @@
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header>InovaTech</ion-list-header>
-          <ion-item href="perfil">
-            <ion-note>Perfil do Utilizador</ion-note>
-          </ion-item>
+          <br>
+          <ion-menu-toggle >
+            <ion-item>
+              <ion-note (click)="perfilClick()">Perfil do Utilizador</ion-note>
+            </ion-item>
+
+          </ion-menu-toggle>
 
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
