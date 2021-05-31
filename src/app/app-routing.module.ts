@@ -49,6 +49,10 @@ const routes: Routes = [
   },  {
     path: 'show-info',
     loadChildren: () => import('./show-info/show-info.module').then( m => m.ShowInfoPageModule)
+  },
+  {
+    path: 'pagamento',
+    loadChildren: () => import('./pagamento/pagamento.module').then( m => m.PagamentoPageModule)
   }
 
 
