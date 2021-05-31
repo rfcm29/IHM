@@ -1,9 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pagamento</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pagamento</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+    <ion-item>
+      <ion-item>
+        <ion-label>Escolha o seu metodo de pagamento</ion-label>
+        <ion-select>
+          <ion-select-option value="cartao">Cartão de Credito</ion-select-option>
+          <ion-select-option value="tranferencia">Transferência Bancaria</ion-select-option>
+          <ion-select-option value="paypal">PAYPAL</ion-select-option>
+          <ion-select-option value="voucher">Voucher</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-item>
+
+    
+    
 
 </ion-content>
