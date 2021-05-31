@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavParams } from '@ionic/angular';
+import { ItensService } from '../services/itens.service';
 
 @Component({
   selector: 'app-show-info',
@@ -9,15 +10,19 @@ import { NavParams } from '@ionic/angular';
 })
 export class ShowInfoPage implements OnInit {
 
-  value: any;
+  public data: any;
 
-  constructor(private activateRoute: ActivatedRoute) {
-    this.activateRoute.queryParams.subscribe((res) =>{
-      this.value = res;
-    })
+  constructor(private itemServ: ItensService) {
   }
 
   ngOnInit() {
+    this.itemServ.getInfoItem().subscribe(data => {
+      this.data = data;
+    })
+  }
+
+  onClick(id: string) {
+    this.itemServ.putItem(id);
   }
 
 }

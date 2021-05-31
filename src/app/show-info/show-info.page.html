@@ -8,7 +8,16 @@
 </ion-header>
 
 <ion-content>
-    <ion-text color="primary">
-      <h1>{{ value.modelo }}</h1>
-    </ion-text>
+    <ion-list>
+      <ion-item>
+        <ion-label>{{ data.item.marca }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ data.item.modelo }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button (click)="onClick(data.key)">
+      Adicionar ao Carrinho
+    </ion-button>
 </ion-content>

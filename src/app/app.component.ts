@@ -21,4 +21,8 @@ export class AppComponent {
   perfilClick() {
     this.route.navigate(['/perfil']);
   }
+
+  carrinhoClick() {
+    this.route.navigate(['/carrinho']);
+  }
 }

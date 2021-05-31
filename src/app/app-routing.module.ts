@@ -46,14 +46,19 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'show-info',
     loadChildren: () => import('./show-info/show-info.module').then( m => m.ShowInfoPageModule)
   },
   {
     path: 'pagamento',
     loadChildren: () => import('./pagamento/pagamento.module').then( m => m.PagamentoPageModule)
+  },  {
+    path: 'carrinho',
+    loadChildren: () => import('./carrinho/carrinho.module').then( m => m.CarrinhoPageModule)
   }
+
 
 
 ];

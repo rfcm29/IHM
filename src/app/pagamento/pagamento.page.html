@@ -8,20 +8,35 @@
 </ion-header>
 
 <ion-content>
-  
-    <ion-item>
+
+  <form [formGroup]="MetodosForm" (ngSubmit)="onSubmit()">
       <ion-item>
-        <ion-label>Escolha o seu metodo de pagamento</ion-label>
-        <ion-select>
+        <ion-label>Metodo de pagamento</ion-label>
+        <ion-select (ionChange)="onChange($event)">
           <ion-select-option value="cartao">Cartão de Credito</ion-select-option>
-          <ion-select-option value="tranferencia">Transferência Bancaria</ion-select-option>
+          <ion-select-option value="transferencia">Transferência Bancaria</ion-select-option>
           <ion-select-option value="paypal">PAYPAL</ion-select-option>
           <ion-select-option value="voucher">Voucher</ion-select-option>
         </ion-select>
-      </ion-item>
     </ion-item>
 
-    
-    
+    <ion-item *ngIf="cartao">
+      <ion-label>cartao</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="voucher">
+      <ion-label>voucher</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="transferencia">
+      <ion-label>ransferesdfsdfs</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="paypal">
+      <ion-label>Awsfasdfsdfasdfasdfasfasfasfsdael</ion-label>
+    </ion-item>
+
+    <ion-button type="submit" color="primary" expand="block">Concluir</ion-button>
+  </form>
 
 </ion-content>

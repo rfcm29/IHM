@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NODATA } from 'dns';
 
 @Component({
   selector: 'app-pagamento',
@@ -12,22 +11,50 @@ export class PagamentoPage implements OnInit {
 
   MetodosForm: FormGroup;
   isSubmitted: boolean;
+  cartao: boolean;
+  paypal: boolean;
+  transferencia: boolean;
+  voucher: boolean;
 
   constructor(public formBuilder: FormBuilder, private router: Router) {
-
+    this.cartao = false;
+    this.paypal = false;
+    this.transferencia = false;
+    this.voucher = false;
     this.isSubmitted= false;
   }
 
   ngOnInit() {
-
     this.MetodosForm= this.formBuilder.group({
-
         numCartao: ['', [Validators.required], [Validators.minLength(16)], [Validators.maxLength(16)]],
         dataExp: ['', [Validators.required], [Validators.pattern('^[0-1]+[1-9]+/[0-9]+[0-9]')]],
         CVV:['', [Validators.required], [Validators.pattern('^[0-9]+[0-9]+[0-9]')]],
-        nomeProp:['', [[Validators.required]]
+        nomeProp:['', [Validators.required]]
     });
+  }
 
+  onChange($event) {
+    if($event.target.value == 'cartao'){
+      this.cartao = true;
+      this.paypal = false;
+      this.transferencia = false;
+      this.voucher = false;
+    } else if($event.target.value == 'paypal' ){
+      this.cartao = false;
+      this.paypal = true;
+      this.transferencia = false;
+      this.voucher = false;
+    } else if($event.target.value == 'transferencia' ){
+      this.cartao = false;
+      this.paypal = false;
+      this.transferencia = true;
+      this.voucher = false;
+    } else if($event.target.value == 'voucher' ){
+      this.cartao = false;
+      this.paypal = false;
+      this.transferencia = false;
+      this.voucher = true;
+    }
   }
 
   submitForm(){
@@ -35,7 +62,7 @@ export class PagamentoPage implements OnInit {
     if(!this.MetodosForm.valid){
       return false;
     } else{
-      
+
     }
   }
 

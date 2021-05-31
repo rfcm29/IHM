@@ -19,9 +19,17 @@
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
+          <br>
+          <ion-menu-toggle >
+            <ion-item>
+              <ion-text (click)="carrinhoClick()">Carrinho de Compras</ion-text>
+            </ion-item>
+
+          </ion-menu-toggle>
         </ion-list>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
+
   </ion-split-pane>
 </ion-app>
