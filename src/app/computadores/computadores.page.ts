@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { ItensService } from '../services/itens.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ComputadoresPage implements OnInit {
 
   public itens: any;
 
-  constructor(private itemServ: ItensService) { }
+  constructor(private itemServ: ItensService, private route: Router) { }
 
   ngOnInit() {
     this.itemServ.getItens().subscribe( itens => {
@@ -20,6 +21,14 @@ export class ComputadoresPage implements OnInit {
 
   cardClick(rota: string, numero: string) {
     this.itemServ.goRota(rota, numero);
+  }
+
+  comparar(){
+    this.route.navigate(["/comparar"]);
+  }
+
+  filtrar(){
+    this.route.navigate(["/filtros"]);
   }
 
 }

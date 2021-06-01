@@ -65,6 +65,14 @@ const routes: Routes = [
   {
     path: 'metodos',
     loadChildren: () => import('./metodos/metodos.module').then( m => m.MetodosPageModule)
+  },
+  {
+    path: 'comparar',
+    loadChildren: () => import('./comparar/comparar.module').then( m => m.CompararPageModule)
+  },
+  {
+    path: 'filtros',
+    loadChildren: () => import('./filtros/filtros.module').then( m => m.FiltrosPageModule)
   }
 
 

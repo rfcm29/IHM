@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Filtrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Marca</ion-label>
+      <ion-select multiple="true">
+        <ion-select-option>Asus</ion-select-option>
+        <ion-select-option>Lenovo</ion-select-option>
+        <ion-select-option>HP</ion-select-option>
+        <ion-select-option>Acer</ion-select-option>
+        <ion-select-option>Lenovo</ion-select-option>
+        <ion-select-option>DELL</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Processador</ion-label>
+      <ion-select multiple="true">
+        <ion-select-option>i3</ion-select-option>
+        <ion-select-option>i5</ion-select-option>
+        <ion-select-option>i7</ion-select-option>
+        <ion-select-option>AMD Ryzen 5</ion-select-option>
+        <ion-select-option>AMD Ryzen 7</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Memoria RAM</ion-label>
+      <ion-select multiple="true">
+        <ion-select-option>8 GB</ion-select-option>
+        <ion-select-option>16 GB</ion-select-option>
+        <ion-select-option>32 GB</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-row>
+    <ion-col size="12" class="ion-padding-start">
+      <ion-button (click)="onClick()">
+        Filtrar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

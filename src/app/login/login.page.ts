@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
   email: "teste@email.com";
   password: 'password';
 
-  constructor(public formBuilder: FormBuilder, private router: Router) {
+  constructor(public formBuilder: FormBuilder, private router: Router, private routing: Router) {
     this.isSubmitted= false;
    }
 
@@ -40,7 +40,7 @@ export class LoginPage implements OnInit {
   }
 
   onClick () {
-    this.router.navigate(['/registo'])
+    this.routing.navigate(['/registo']);
   }
 
 }

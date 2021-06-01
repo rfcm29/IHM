@@ -2,31 +2,43 @@
   "1": {
     "marca": "Asus",
     "modelo": "k555ln",
+    "processador": "Intel i5",
+    "memoria": "8 GB",
     "preco": "750€"
   },
   "2": {
     "marca": "Asus",
     "modelo": "k555ln",
-    "preco": "750€"
+    "processador": "Intel i7",
+    "memoria": "8 GB",
+    "preco": "850€"
   },
   "3": {
-    "marca": "Asus",
+    "marca": "HP",
     "modelo": "k555ln",
+    "processador": "Intel i3",
+    "memoria": "16 GB",
     "preco": "750€"
   },
   "4": {
     "marca": "Lenovo",
     "modelo": "k555ln",
+    "processador": "Intel i5",
+    "memoria": "8 GB",
     "preco": "750€"
   },
   "5": {
     "marca": "Asus",
     "modelo": "k555ln",
-    "preco": "750€"
+    "processador": "Intel i7",
+    "memoria": "32 GB",
+    "preco": "1000€"
   },
   "6": {
-    "marca": "Asus",
+    "marca": "DELL",
     "modelo": "k555ln",
-    "preco": "750€"
+    "processador": "Intel i3",
+    "memoria": "8 GB",
+    "preco": "500€"
   }
 }
