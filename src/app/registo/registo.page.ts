@@ -39,4 +39,12 @@ export class RegistoPage implements OnInit {
     return this.RegistoForm.controls;
   }
 
+  onClick () {
+    this.router.navigate(['/login'])
+  }
+
+  carrinhoClick() {
+    this.router.navigate(['/carrinho'])
+  }
+
 }
