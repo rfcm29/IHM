@@ -8,7 +8,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label *ngFor="let item of carrinho"> {{ item.marca }}</ion-label>
+  <ion-item *ngFor="let item of carrinho">
+    <ion-label> {{ item.marca }}  {{ item.modelo }}</ion-label>
+    <ion-label>{{ item.preco}}</ion-label>
   </ion-item>
+
+  <ion-button (click)="onClick()">
+    Continuar
+  </ion-button>
 </ion-content>

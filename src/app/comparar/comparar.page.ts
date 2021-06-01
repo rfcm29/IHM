@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ItensService } from '../services/itens.service';
 
 @Component({
   selector: 'app-comparar',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompararPage implements OnInit {
 
-  constructor() { }
+  public itens: any;
+  public id: any;
+
+  constructor(private itemServ: ItensService, private route: Router) {
+   }
 
   ngOnInit() {
+    if(this.route.getCurrentNavigation().extras.state) {
+      this.id = this.route.getCurrentNavigation().extras.state.key;
+    }
+    this.itemServ.getItens().subscribe( itens => {
+      this.itens = itens
+    });
+  }
+
+  cardClick() {
+    console.log(this.itens);
+    console.log(this.id);
   }
 
 }

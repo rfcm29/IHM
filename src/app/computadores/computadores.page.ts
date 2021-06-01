@@ -23,10 +23,6 @@ export class ComputadoresPage implements OnInit {
     this.itemServ.goRota(rota, numero);
   }
 
-  comparar(){
-    this.route.navigate(["/comparar"]);
-  }
-
   filtrar(){
     this.route.navigate(["/filtros"]);
   }

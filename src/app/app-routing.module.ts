@@ -73,6 +73,10 @@ const routes: Routes = [
   {
     path: 'filtros',
     loadChildren: () => import('./filtros/filtros.module').then( m => m.FiltrosPageModule)
+  },
+  {
+    path: 'compra',
+    loadChildren: () => import('./compra/compra.module').then( m => m.CompraPageModule)
   }
 
 

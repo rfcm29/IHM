@@ -86,12 +86,8 @@
     </ion-item>
 
     <ion-item *ngIf="voucher">
-      <ion-item lines="full">
-              <ion-label position="floating">Codigo do voucher</ion-label>
-              <ion-input type="any" formControlName="codVoucher" placeholder="Codigo do voucher" required></ion-input>
-            </ion-item>
-            <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.codVoucher.errors?.required">
-              Codigo do voucher necessário
+            <ion-text class="ion-padding">
+              Codigo do voucher
             </ion-text>
     </ion-item>
 

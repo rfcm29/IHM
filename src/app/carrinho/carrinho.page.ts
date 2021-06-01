@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ItensService } from '../services/itens.service';
 
 @Component({
@@ -9,13 +10,17 @@ import { ItensService } from '../services/itens.service';
 export class CarrinhoPage implements OnInit {
 
   public carrinho;
-  constructor(private itemServ: ItensService) { }
+  constructor(private itemServ: ItensService, private route: Router) { }
 
   ngOnInit() {
     this.itemServ.getCarrinho().subscribe( itens => {
       this.carrinho = itens;
     });
     console.log(this.carrinho);
+  }
+
+  onClick() {
+    this.route.navigate(['/compra'])
   }
 
 }

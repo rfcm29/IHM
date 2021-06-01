@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { PagamentoService } from '../services/pagamento.service';
 
 @Component({
   selector: 'app-pagamento',
@@ -16,7 +18,7 @@ export class PagamentoPage implements OnInit {
   transferencia: boolean;
   voucher: boolean;
 
-  constructor(public formBuilder: FormBuilder, private router: Router) {
+  constructor(public formBuilder: FormBuilder, private router: Router, private pagamentoServ: PagamentoService, private toastController: ToastController) {
     this.cartao = false;
     this.paypal = false;
     this.transferencia = false;
@@ -29,8 +31,7 @@ export class PagamentoPage implements OnInit {
         numCartao: ['', [Validators.required], [Validators.minLength(16)], [Validators.maxLength(16)]],
         dataExp: ['', [Validators.required], [Validators.pattern('^[0-1]+[1-9]+/+[0-9]+[0-9]')]],
         cVV:['', [Validators.required], [Validators.pattern('^[0-9]+[0-9]+[0-9]')]],
-        nomeProp:['', [Validators.required]],
-        codVoucher:['', [Validators.required]]
+        nomeProp:['', [Validators.required]]
     });
   }
 
@@ -58,12 +59,20 @@ export class PagamentoPage implements OnInit {
     }
   }
 
-  submitForm(){
+  async submitForm(){
     this.isSubmitted = true;
     if(/*!this.MetodosForm.valid*/ false){
       return false;
     } else{
       this.router.navigate(["/metodos"]);
+      this.pagamentoServ.setPagamento(this.MetodosForm.value);
+      const toast = await this.toastController.create({
+        color: 'dark',
+        duration: 2000,
+        message: 'Pagamento adicionado com sucesso'
+      });
+
+      await toast.present();
     }
   }
 

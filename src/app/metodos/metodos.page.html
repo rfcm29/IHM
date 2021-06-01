@@ -9,8 +9,13 @@
 
 <ion-content>
 
+  <ion-item *ngFor="let item of metodo">
+    <ion-label>Cartao n:{{ item.numCartao}}</ion-label>
+    <ion-label>Proprietario: {{ item.nomeProp}}</ion-label>
+  </ion-item>
+
   <ion-button (click)="onClick()">
-    Adicionar novo metodo   
+    Adicionar novo metodo
   </ion-button>
 
 </ion-content>

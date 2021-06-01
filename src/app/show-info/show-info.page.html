@@ -18,6 +18,9 @@
         <ion-label>{{ data.item.modelo }}</ion-label>
       </ion-item>
     </ion-list>
+    <ion-col size="4"><ion-button (click)="comparar()" expand="block" fill="outline" shape="round" color="blue">
+      Comparar com outro produto
+    </ion-button></ion-col>
 
     <ion-button (click)="onClick(data.key)">
       Adicionar ao Carrinho

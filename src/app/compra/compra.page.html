@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>compra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Metodo de Pagamento</ion-label>
+    <ion-select value="notifications" interface="action-sheet">
+      <ion-select-option value="{{ item.numCartao}}" *ngFor="let item of pagamentos">{{ item.numCartao}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button (click)="concluir()">
+    Concluir Compra
+  </ion-button>
+</ion-content>
