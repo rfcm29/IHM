@@ -25,21 +25,13 @@ export class PagamentoPage implements OnInit {
   }
 
   ngOnInit() {
-    if (this.cartao) { this.MetodosForm= this.formBuilder.group({
+    this.MetodosForm= this.formBuilder.group({
         numCartao: ['', [Validators.required], [Validators.minLength(16)], [Validators.maxLength(16)]],
         dataExp: ['', [Validators.required], [Validators.pattern('^[0-1]+[1-9]+/+[0-9]+[0-9]')]],
         cVV:['', [Validators.required], [Validators.pattern('^[0-9]+[0-9]+[0-9]')]],
-        nomeProp:['', [Validators.required]]
-    });
-      
-    } if(this.voucher) {
-      this.MetodosForm= this.formBuilder.group({
+        nomeProp:['', [Validators.required]],
         codVoucher:['', [Validators.required]]
     });
-      
-    }
-    
-
   }
 
   onChange($event) {
@@ -68,13 +60,12 @@ export class PagamentoPage implements OnInit {
 
   submitForm(){
     this.isSubmitted = true;
-    if(!this.MetodosForm.valid){
+    if(/*!this.MetodosForm.valid*/ false){
       return false;
     } else{
       this.router.navigate(["/metodos"]);
     }
   }
-
 
   get formControls(){
     return this.MetodosForm.controls;
