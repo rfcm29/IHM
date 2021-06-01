@@ -16,10 +16,10 @@
     <ion-input type="text" formControlName="email" placeholder="Email" required></ion-input>
   </ion-item>
   <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.required">
-    Email necessario
+    E-mail necessário
   </ion-text>
   <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.pattern">
-    Email incorreto
+    E-mail incorreto
   </ion-text>
 
   <ion-item lines="full">
@@ -27,15 +27,18 @@
     <ion-input type="password" formControlName="password" laceholder="Password" required></ion-input>
   </ion-item>
   <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.email.errors?.required">
-    Password necessaria
+    Password necessária
   </ion-text>
 
   <ion-row>
     <ion-col >
-      <ion-button type="submit" color="primary" expand="block">Log in</ion-button>
+      <ion-button type="submit" color="blue" expand="block">Entrar</ion-button>
     </ion-col>
   </ion-row>
 
  </form>
+
+ <ion-text>Não tens uma conta? </ion-text>
+ <ion-text color="blue" (click)="onClick()"> Regista-te aqui</ion-text>
 
 </ion-content>

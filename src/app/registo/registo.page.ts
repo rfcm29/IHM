@@ -3,13 +3,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-registo',
+  templateUrl: './registo.page.html',
+  styleUrls: ['./registo.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class RegistoPage implements OnInit {
 
-  LoginForm: FormGroup;
+  RegistoForm: FormGroup;
   isSubmitted: boolean;
   email: "teste@email.com";
   password: 'password';
@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
    }
 
   ngOnInit() {
-    this.LoginForm = this.formBuilder.group({
+    this.RegistoForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z]+\\.[a-z]{2,4}$')]],
       password: ['', [Validators.required]]
     });
@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
 
   submitForm(){
     this.isSubmitted = true;
-    if(!this.LoginForm.valid){
+    if(!this.RegistoForm.valid){
       return false;
     } else{
       this.router.navigate(['/home'])
@@ -36,11 +36,7 @@ export class LoginPage implements OnInit {
 
 
   get formControls(){
-    return this.LoginForm.controls;
-  }
-
-  onClick () {
-    this.router.navigate(['/registo'])
+    return this.RegistoForm.controls;
   }
 
 }
