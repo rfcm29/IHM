@@ -9,7 +9,7 @@
 
 <ion-content>
 
-  <form [formGroup]="MetodosForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="MetodosForm" (ngSubmit)="submitForm()">
       <ion-item>
         <ion-label>Metodo de pagamento</ion-label>
         <ion-select (ionChange)="onChange($event)">
@@ -21,11 +21,78 @@
     </ion-item>
 
     <ion-item *ngIf="cartao">
-      <ion-label> </ion-label>
+
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12">
+      <ion-item lines="full">
+        <ion-label position="floating">Numero do Cartão</ion-label>
+        <ion-input type="number" formControlName="numCartao" placeholder="Numero do cartão" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.required">
+        Numero do cartão necessário
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.minLength">
+        O numero do cartão deve ter 16 digitos
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.maxLength">
+        O numero do cartão deve ter 16 digitos
+      </ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+      <ion-item lines="full">
+        <ion-label position="floating">Data de expiração</ion-label>
+        <ion-input type="any" formControlName="dataExp" placeholder="Data de expiração" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.dataExp.errors?.required">
+        Data de expiração necessária
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.dataExp.errors?.pattern">
+        Formato da data de expiração errado
+      </ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+      <ion-item lines="full">
+        <ion-label position="floating">CVV</ion-label>
+        <ion-input type="number" formControlName="cVV" placeholder="CVV" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.required">
+        CVV necessário
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.pattern">
+        Formato do CVV errado
+      </ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+      <ion-item lines="full">
+        <ion-label position="floating">Nome do proprietario</ion-label>
+        <ion-input type="text" formControlName="nomeProp" placeholder="Nome do proprietario" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.nomeProp.errors?.required">
+        Nome do proprietario necessário
+      </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-item>
 
     <ion-item *ngIf="voucher">
-      <ion-label>Insira aqui o seu código:</ion-label>
+      <ion-item lines="full">
+              <ion-label position="floating">Codigo do voucher</ion-label>
+              <ion-input type="any" formControlName="codVoucher" placeholder="Codigo do voucher" required></ion-input>
+            </ion-item>
+            <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.codVoucher.errors?.required">
+              Codigo do voucher necessário
+            </ion-text>
     </ion-item>
 
     <ion-item *ngIf="transferencia">

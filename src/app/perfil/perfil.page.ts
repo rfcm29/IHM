@@ -14,6 +14,6 @@ export class PerfilPage {
   constructor(private route: Router ) { }
 
   onClick(){
-    this.route.navigate(['/pagamento']);
+    this.route.navigate(['/metodos']);
   }
 }
