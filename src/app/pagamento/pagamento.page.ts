@@ -63,7 +63,7 @@ export class PagamentoPage implements OnInit {
     this.isSubmitted = true;
     if(/*!this.MetodosForm.valid*/ false){
       return false;
-    } else{
+    } else if(this.cartao==true){
       this.router.navigate(["/metodos"]);
       this.pagamentoServ.setPagamento(this.MetodosForm.value);
       const toast = await this.toastController.create({
@@ -73,6 +73,8 @@ export class PagamentoPage implements OnInit {
       });
 
       await toast.present();
+
+      this.MetodosForm=null;
     }
   }
 

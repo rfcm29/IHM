@@ -3,19 +3,21 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Metodos de Pagamento</ion-title>
+    <ion-title>Métodos de Pagamento</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   <ion-item *ngFor="let item of metodo">
-    <ion-label>Cartao n:{{ item.numCartao}}</ion-label>
-    <ion-label>Proprietario: {{ item.nomeProp}}</ion-label>
+    <ion-label>Cartão número: {{ item.numCartao}}</ion-label>
+    <ion-label>Proprietário: {{ item.nomeProp}}</ion-label>
   </ion-item>
 
-  <ion-button (click)="onClick()">
-    Adicionar novo metodo
+  
+  <ion-button color="blue" (click)="onClick()">
+    Adicionar novo método
   </ion-button>
+
 
 </ion-content>

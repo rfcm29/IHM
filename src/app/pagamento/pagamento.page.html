@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Adicionar Metodo de Pagamento</ion-title>
+    <ion-title>Adicionar Método de Pagamento</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
 
   <form [formGroup]="MetodosForm" (ngSubmit)="submitForm()">
       <ion-item>
-        <ion-label>Metodo de pagamento</ion-label>
+        <ion-label>Método de Pagamento</ion-label>
         <ion-select (ionChange)="onChange($event)">
           <ion-select-option value="cartao">Cartão de Credito</ion-select-option>
           <ion-select-option value="transferencia">Transferência Bancaria</ion-select-option>
@@ -26,17 +26,17 @@
         <ion-row>
           <ion-col size="12">
       <ion-item lines="full">
-        <ion-label position="floating">Numero do Cartão</ion-label>
+        <ion-label position="floating">Número do Cartão</ion-label>
         <ion-input type="number" formControlName="numCartao" placeholder="Numero do cartão" required></ion-input>
       </ion-item>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.required">
-        Numero do cartão necessário
+        Número do cartão necessário
       </ion-text>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.minLength">
-        O numero do cartão deve ter 16 digitos
+        O número do cartão deve ter 16 dígitos
       </ion-text>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.maxLength">
-        O numero do cartão deve ter 16 digitos
+        O número do cartão deve ter 16 dígitos
       </ion-text>
           </ion-col>
         </ion-row>
@@ -78,7 +78,7 @@
         <ion-input type="text" formControlName="nomeProp" placeholder="Nome do proprietario" required></ion-input>
       </ion-item>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.nomeProp.errors?.required">
-        Nome do proprietario necessário
+        Nome do proprietário necessário
       </ion-text>
           </ion-col>
         </ion-row>
@@ -87,7 +87,7 @@
 
     <ion-item *ngIf="voucher">
             <ion-text class="ion-padding">
-              Codigo do voucher
+              Código do Voucher
             </ion-text>
     </ion-item>
 
