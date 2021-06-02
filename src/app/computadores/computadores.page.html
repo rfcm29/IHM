@@ -35,11 +35,15 @@
     <ion-row>
       <ion-col size="6" *ngFor="let item of itens | keyvalue">
         <ion-card button (click)="cardClick('show-info', item.key)">
-          <ion-img [src]="image"></ion-img>
+          <ion-img></ion-img>
           <ion-card-header>
+            <ion-card-subtitle>{{item.value.modelo }}</ion-card-subtitle>
             <ion-card-title>{{ item.value.marca }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
+            <ion-text>{{ item.value.processador }}</ion-text>
+            <br>
+            <ion-text>{{ item.value.memoria }}</ion-text>
             <ion-card-content class="ion-text-end">
               <ion-text>
                 {{ item.value.preco }}

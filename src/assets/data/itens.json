@@ -4,41 +4,53 @@
     "modelo": "k555ln",
     "processador": "Intel i5",
     "memoria": "8 GB",
-    "preco": "750€"
+    "preco": "750€",
+    "comentario_1":"Produto com boa qualidade!",
+    "comentario_2":"Bom produto! Recomendo!"
   },
   "2": {
     "marca": "Asus",
     "modelo": "k555ln",
     "processador": "Intel i7",
     "memoria": "8 GB",
-    "preco": "850€"
+    "preco": "850€",
+    "comentario_1":"Produto com boa qualidade!",
+    "comentario_2":"Bom produto! Recomendo!"
   },
   "3": {
     "marca": "HP",
     "modelo": "k555ln",
     "processador": "Intel i3",
     "memoria": "16 GB",
-    "preco": "750€"
+    "preco": "750€",
+    "comentario_1":"Produto com boa qualidade!",
+    "comentario_2":"Bom produto! Recomendo!"
   },
   "4": {
     "marca": "Lenovo",
     "modelo": "k555ln",
     "processador": "Intel i5",
     "memoria": "8 GB",
-    "preco": "750€"
+    "preco": "750€",
+    "comentario_1":"Produto com boa qualidade!",
+    "comentario_2":"Bom produto! Recomendo!"
   },
   "5": {
     "marca": "Asus",
     "modelo": "k555ln",
     "processador": "Intel i7",
     "memoria": "32 GB",
-    "preco": "1000€"
+    "preco": "1000€",
+    "comentario_1":"Produto com boa qualidade!",
+    "comentario_2":"Bom produto! Recomendo!"
   },
   "6": {
     "marca": "DELL",
     "modelo": "k555ln",
     "processador": "Intel i3",
     "memoria": "8 GB",
-    "preco": "500€"
+    "preco": "500€",
+    "comentario_1":"Produto com boa qualidade!",
+    "comentario_2":"Bom produto! Recomendo!"
   }
 }
