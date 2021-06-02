@@ -21,7 +21,7 @@
 
     <ion-row>
       <ion-col size="6" *ngFor="let item of itens | keyvalue">
-          <ion-card button (click)="cardClick()" *ngIf="item.key != id">
+          <ion-card button (click)="cardClick(item.key)" *ngIf="item.key != id.key">
             <ion-img [src]="image"></ion-img>
             <ion-card-header>
               <ion-card-title>{{ item.value.marca }}</ion-card-title>

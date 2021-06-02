@@ -35,7 +35,7 @@ export class ShowInfoPage implements OnInit {
   comparar(){
     const extras: NavigationExtras = {
       state: {
-        key: this.data.key
+        key: this.data
       }
     }
     this.route.navigate(["/comparar"], extras);

@@ -77,6 +77,10 @@ const routes: Routes = [
   {
     path: 'compra',
     loadChildren: () => import('./compra/compra.module').then( m => m.CompraPageModule)
+  },
+  {
+    path: 'compara-info',
+    loadChildren: () => import('./compara-info/compara-info.module').then( m => m.ComparaInfoPageModule)
   }
 
 

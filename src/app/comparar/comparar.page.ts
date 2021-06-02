@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { ItensService } from '../services/itens.service';
 
 @Component({
@@ -24,9 +24,15 @@ export class CompararPage implements OnInit {
     });
   }
 
-  cardClick() {
+  cardClick(id) {
     console.log(this.itens);
     console.log(this.id);
+    const extras: NavigationExtras = {
+      state: {
+        itens: {item1: this.id.item, item2: this.itens[id]}
+      }
+    }
+    this.route.navigate(['/compara-info'], extras)
   }
 
 }
