@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { ItensService } from '../services/itens.service';
 
 @Component({
@@ -10,17 +11,26 @@ import { ItensService } from '../services/itens.service';
 export class CarrinhoPage implements OnInit {
 
   public carrinho;
-  constructor(private itemServ: ItensService, private route: Router) { }
-
-  ngOnInit() {
+  constructor(private itemServ: ItensService, private route: Router, private toastController: ToastController) {
     this.itemServ.getCarrinho().subscribe( itens => {
       this.carrinho = itens;
     });
-    console.log(this.carrinho);
+   }
+
+  ngOnInit() {
   }
 
-  onClick() {
-    this.route.navigate(['/compra'])
+  async onClick() {
+    if(this.carrinho.length == 0){
+      const toast = await this.toastController.create({
+        color: 'dark',
+        duration: 2000,
+        message: 'Adicione items ao carrinho antes de continuar'
+      });
+      await toast.present();
+    } else {
+      this.route.navigate(['/compra'])
+    }
   }
 
 }

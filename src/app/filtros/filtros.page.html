@@ -8,24 +8,23 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list >
     <ion-item>
       <ion-label>Marca</ion-label>
-      <ion-select multiple="true">
-        <ion-select-option>Asus</ion-select-option>
-        <ion-select-option>Lenovo</ion-select-option>
-        <ion-select-option>HP</ion-select-option>
-        <ion-select-option>Acer</ion-select-option>
-        <ion-select-option>Lenovo</ion-select-option>
-        <ion-select-option>DELL</ion-select-option>
+      <ion-select multiple="true" (ionChange)="onChange($event, 'marcas')">
+        <ion-select-option value="Asus">Asus</ion-select-option>
+        <ion-select-option value="Lenovo">Lenovo</ion-select-option>
+        <ion-select-option value="HP">HP</ion-select-option>
+        <ion-select-option value="Acer">Acer</ion-select-option>
+        <ion-select-option value="DELL">DELL</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Processador</ion-label>
-      <ion-select multiple="true">
-        <ion-select-option>i3</ion-select-option>
-        <ion-select-option>i5</ion-select-option>
-        <ion-select-option>i7</ion-select-option>
+      <ion-select multiple="true" (ionChange)="onChange($event, 'processadores')">
+        <ion-select-option value='Intel i3'>i3</ion-select-option>
+        <ion-select-option value='Intel i5'>i5</ion-select-option>
+        <ion-select-option value='Intel i7'>i7</ion-select-option>
         <ion-select-option>AMD Ryzen 5</ion-select-option>
         <ion-select-option>AMD Ryzen 7</ion-select-option>
       </ion-select>
@@ -43,7 +42,11 @@
 
   <ion-row>
     <ion-col size="12" class="ion-padding-start">
+<<<<<<< HEAD
       <ion-button (click)="filtrar()">
+=======
+      <ion-button (click)="onClick()" color="blue">
+>>>>>>> 64bde7376365e7de9dbfff2a8137571d3e14e006
         Filtrar
       </ion-button>
     </ion-col>

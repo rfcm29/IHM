@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { NavParams, ToastController } from '@ionic/angular';
+import { AlertController, NavParams, ToastController } from '@ionic/angular';
 import { ItensService } from '../services/itens.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class ShowInfoPage implements OnInit {
 
   public data: any;
 
-  constructor(private itemServ: ItensService, private toastController: ToastController, private route: Router) {
+  constructor(private itemServ: ItensService, private toastController: ToastController, private route: Router, public alertController: AlertController) {
   }
 
   ngOnInit() {
@@ -23,6 +23,25 @@ export class ShowInfoPage implements OnInit {
 
   async onClick(id: string) {
     this.itemServ.putItem(id);
+
+    const alert = await this.alertController.create({
+      message: 'Item adicionado ao carrinho.',
+      buttons: [{
+        text: 'Continuar',
+          handler: () => {
+            this.route.navigate(['/computadores']);
+          }
+        }, {
+          text: 'Carrinho de Compras',
+          handler: () => {
+            this.route.navigate(['/carrinho']);
+          }
+      }]
+    });
+
+    await alert.present();
+
+    /*
     const toast = await this.toastController.create({
       color: 'dark',
       duration: 2000,
@@ -30,6 +49,7 @@ export class ShowInfoPage implements OnInit {
     });
 
     await toast.present();
+    */
   }
 
   comparar(){

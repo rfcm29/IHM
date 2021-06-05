@@ -7,10 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class ItensService {
 
-  private itens: any;
+  private itens: any[] = [];
   private carrinho = [];
 
-  constructor(private router: Router, private rotaAtiva: ActivatedRoute) { }
+  constructor(private router: Router, private rotaAtiva: ActivatedRoute) {
+  }
 
   getItens() {
     return new Observable (observer => {
@@ -56,5 +57,49 @@ export class ItensService {
         observer.next(this.carrinho);
         observer.complete();
     })
+  }
+
+  goFiltros(rota: string, filtros: any) {
+    const extras: NavigationExtras = {
+      state: {
+        filtros: filtros
+      }
+    }
+
+    this.router.navigate([rota], extras);
+  }
+
+  getFiltragem() {
+    return new Observable (observer => {
+      this.rotaAtiva.queryParams.subscribe(params =>{
+        if(this.router.getCurrentNavigation().extras.state) {
+          const filtros: any = this.router.getCurrentNavigation().extras.state.filtros;
+          observer.next(this.filtra(filtros));
+          observer.complete;
+        }
+      })
+    })
+  }
+
+  filtra(filtros: any) {
+
+    var itensFiltrados: any[] = [];
+
+    Object.keys(this.itens).forEach(key => {
+      filtros.marcas.forEach(marca => {
+        if(this.itens[key].marca === marca && !itensFiltrados.includes(this.itens[key])){
+          itensFiltrados.push(this.itens[key]);
+        }
+      });
+      filtros.processadores.forEach(process => {
+        if(this.itens[key].processador === process && !itensFiltrados.includes(this.itens[key])){
+          itensFiltrados.push(this.itens[key]);
+        }
+      });
+    });
+
+    console.log(itensFiltrados)
+
+    return itensFiltrados;
   }
 }

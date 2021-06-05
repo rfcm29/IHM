@@ -54,7 +54,8 @@ const routes: Routes = [
   {
     path: 'pagamento',
     loadChildren: () => import('./pagamento/pagamento.module').then( m => m.PagamentoPageModule)
-  },  {
+  },
+  {
     path: 'carrinho',
     loadChildren: () => import('./carrinho/carrinho.module').then( m => m.CarrinhoPageModule)
   },
@@ -81,10 +82,11 @@ const routes: Routes = [
   {
     path: 'compara-info',
     loadChildren: () => import('./compara-info/compara-info.module').then( m => m.ComparaInfoPageModule)
+  },
+  {
+    path: 'show-filtros',
+    loadChildren: () => import('./show-filtros/show-filtros.module').then( m => m.ShowFiltrosPageModule)
   }
-
-
-
 ];
 
 @NgModule({
