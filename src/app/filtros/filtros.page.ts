@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltrosPage implements OnInit {
 
+  filtros: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  filtrar(){
+    
   }
 
 }
