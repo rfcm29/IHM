@@ -24,17 +24,17 @@
         <ion-label>Memoria RAM: {{ data.item.memoria }}</ion-label>
       </ion-item>
     </ion-list>
-    
+
     <br>
-    
+
     <ion-row class="ion-padding-start">
       <ion-col size="12">
         <ion-text>
-      <h3>Comentarios:</h3>
+      <h3>Comentários:</h3>
     </ion-text>
       </ion-col>
     </ion-row>
-    
+
     <ion-list>
       <ion-item>
         <ion-label>Utilizador 1: {{data.item.comentario_1}}</ion-label>
@@ -44,11 +44,11 @@
       </ion-item>
     </ion-list>
 
-    <ion-col size="4"><ion-button (click)="comparar()" expand="block" fill="outline" shape="round" color="blue">
+    <ion-col size="4"><ion-button (click)="comparar()" color="blue">
       Comparar com outro produto
     </ion-button></ion-col>
 
-    <ion-button (click)="onClick(data.key)">
+    <ion-button (click)="onClick(data.key)" color="blue">
       Adicionar ao Carrinho
     </ion-button>
 </ion-content>

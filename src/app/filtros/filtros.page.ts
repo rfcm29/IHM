@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItensService } from '../services/itens.service';
 
 @Component({
   selector: 'app-filtros',
@@ -7,9 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltrosPage implements OnInit {
 
-  constructor() { }
+  filtro: {
+    marcas,
+    processadores
+  };
+
+  constructor( private serv: ItensService) {
+    this.filtro = {
+      marcas: [],
+      processadores: []
+    }
+  }
 
   ngOnInit() {
+  }
+
+  onChange($event, tipo){
+    if(tipo == "marcas"){
+      this.filtro.marcas = $event.target.value
+    }
+    if(tipo == "processadores"){
+      this.filtro.processadores = $event.target.value
+    }
+  }
+
+  onClick() {
+    this.serv.goFiltros("show-filtros", this.filtro);
   }
 
 }

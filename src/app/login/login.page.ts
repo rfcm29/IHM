@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +16,10 @@ export class LoginPage implements OnInit {
   email: "teste@email.com";
   password: 'password';
 
-  constructor(public formBuilder: FormBuilder, private router: Router, private routing: Router) {
+  constructor(public formBuilder: FormBuilder, private router: Router, private routing: Router, private orientacao: ScreenOrientation, private menuCtrl: MenuController) {
     this.isSubmitted= false;
+    this.orientacao.lock(this.orientacao.ORIENTATIONS.PORTRAIT);
+      this.menuCtrl.enable(false);
    }
 
   ngOnInit() {
