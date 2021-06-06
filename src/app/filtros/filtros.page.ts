@@ -8,31 +8,23 @@ import { ItensService } from '../services/itens.service';
 })
 export class FiltrosPage implements OnInit {
 
-<<<<<<< HEAD
-  filtros: any;
-
-  constructor() { }
-=======
   filtro: {
     marcas,
-    processadores
+    processadores,
+    ram
   };
 
   constructor( private serv: ItensService) {
     this.filtro = {
       marcas: [],
-      processadores: []
+      processadores: [],
+      ram: []
     }
   }
->>>>>>> 64bde7376365e7de9dbfff2a8137571d3e14e006
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
-  filtrar(){
-    
-=======
   onChange($event, tipo){
     if(tipo == "marcas"){
       this.filtro.marcas = $event.target.value
@@ -40,11 +32,13 @@ export class FiltrosPage implements OnInit {
     if(tipo == "processadores"){
       this.filtro.processadores = $event.target.value
     }
+    if(tipo == "ram"){
+      this.filtro.ram = $event.target.value
+    }
   }
 
   onClick() {
     this.serv.goFiltros("show-filtros", this.filtro);
->>>>>>> 64bde7376365e7de9dbfff2a8137571d3e14e006
   }
 
 }

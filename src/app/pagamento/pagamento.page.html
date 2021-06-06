@@ -9,7 +9,7 @@
 
 <ion-content>
 
-  <form [formGroup]="MetodosForm" (ngSubmit)="submitForm()">
+  <form [formGroup]="MetodosForm" (ngSubmit)="submitForm()" novalidate>
       <ion-item>
         <ion-label>Método de Pagamento</ion-label>
         <ion-select (ionChange)="onChange($event)">
@@ -32,10 +32,10 @@
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.required">
         Número do cartão necessário
       </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.minLength">
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.min">
         O número do cartão deve ter 16 dígitos
       </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.maxLength">
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.max">
         O número do cartão deve ter 16 dígitos
       </ion-text>
           </ion-col>
@@ -65,9 +65,13 @@
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.required">
         CVV necessário
       </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.pattern">
-        Formato do CVV errado
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.max">
+        O CVV deve ter 3 digitos
       </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.min">
+        O CVV deve ter 3 digitos
+      </ion-text>
+      
           </ion-col>
         </ion-row>
 

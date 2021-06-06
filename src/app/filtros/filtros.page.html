@@ -25,16 +25,16 @@
         <ion-select-option value='Intel i3'>i3</ion-select-option>
         <ion-select-option value='Intel i5'>i5</ion-select-option>
         <ion-select-option value='Intel i7'>i7</ion-select-option>
-        <ion-select-option>AMD Ryzen 5</ion-select-option>
-        <ion-select-option>AMD Ryzen 7</ion-select-option>
+        <ion-select-option value= 'AMD Ryzen 5'>AMD Ryzen 5</ion-select-option>
+        <ion-select-option value= 'AMD Ryzen 7'>AMD Ryzen 7</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Memoria RAM</ion-label>
-      <ion-select multiple="true">
-        <ion-select-option>8 GB</ion-select-option>
-        <ion-select-option>16 GB</ion-select-option>
-        <ion-select-option>32 GB</ion-select-option>
+      <ion-select multiple="true" (ionChange)="onChange($event, 'ram')">
+        <ion-select-option value= '8 GB'>8 GB</ion-select-option>
+        <ion-select-option value= '16 GB'>16 GB</ion-select-option>
+        <ion-select-option value= '32 GB'>32 GB</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
@@ -42,11 +42,7 @@
 
   <ion-row>
     <ion-col size="12" class="ion-padding-start">
-<<<<<<< HEAD
-      <ion-button (click)="filtrar()">
-=======
       <ion-button (click)="onClick()" color="blue">
->>>>>>> 64bde7376365e7de9dbfff2a8137571d3e14e006
         Filtrar
       </ion-button>
     </ion-col>

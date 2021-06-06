@@ -28,9 +28,9 @@ export class PagamentoPage implements OnInit {
 
   ngOnInit() {
     this.MetodosForm= this.formBuilder.group({
-        numCartao: ['', [Validators.required], [Validators.minLength(16)], [Validators.maxLength(16)]],
-        dataExp: ['', [Validators.required], [Validators.pattern('^[0-1]+[1-9]+/+[0-9]+[0-9]')]],
-        cVV:['', [Validators.required], [Validators.pattern('^[0-9]+[0-9]+[0-9]')]],
+        numCartao: ['', [Validators.required, Validators.min(16), Validators.max(16)]],
+        dataExp: ['', [Validators.required, Validators.pattern('^[0-3]+[1-9]+/+[0-1]+[0-9]')]],
+        cVV:['', [Validators.required, Validators.min(3), Validators.max(3)]],
         nomeProp:['', [Validators.required]]
     });
   }
@@ -61,12 +61,12 @@ export class PagamentoPage implements OnInit {
 
   async submitForm(){
     this.isSubmitted = true;
-    if(/*!this.MetodosForm.valid*/ false){
+    if(!this.MetodosForm.valid){
       return false;
     } else if(this.cartao==true){
       this.router.navigate(["/metodos"]);
       this.pagamentoServ.setPagamento(this.MetodosForm.value);
-      const toast = await this.toastController.create({
+     const toast = await this.toastController.create({
         color: 'dark',
         duration: 2000,
         message: 'Pagamento adicionado com sucesso'

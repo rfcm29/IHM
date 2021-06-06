@@ -10,13 +10,18 @@ export class ShowFiltrosPage implements OnInit {
 
   itens: any;
 
-  constructor(private itemServ: ItensService) { }
+  constructor(private itemServ: ItensService,) { }
 
   ngOnInit() {
     this.itemServ.getFiltragem().subscribe( itens => {
       this.itens = itens;
     });
-    console.log(this.itens)
+   console.log(this.itens) 
+
+  }
+
+  cardClick(rota: string, numero: string) {
+    this.itemServ.goRota(rota, numero);
   }
 
 }

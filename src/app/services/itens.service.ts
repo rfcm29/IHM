@@ -96,6 +96,11 @@ export class ItensService {
           itensFiltrados.push(this.itens[key]);
         }
       });
+      filtros.ram.forEach(ram => {
+        if(this.itens[key].memoria === ram && !itensFiltrados.includes(this.itens[key])){
+          itensFiltrados.push(this.itens[key]);
+        }
+      });
     });
 
     console.log(itensFiltrados)
