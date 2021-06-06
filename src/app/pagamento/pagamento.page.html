@@ -27,15 +27,12 @@
           <ion-col size="12">
       <ion-item lines="full">
         <ion-label position="floating">Número do Cartão</ion-label>
-        <ion-input type="number" formControlName="numCartao" placeholder="Numero do cartão" required></ion-input>
+        <ion-input maxlength="16" type="number" formControlName="numCartao" placeholder="Numero do cartão" required></ion-input>
       </ion-item>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.required">
         Número do cartão necessário
       </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.min">
-        O número do cartão deve ter 16 dígitos
-      </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.max">
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.numCartao.errors?.pattern">
         O número do cartão deve ter 16 dígitos
       </ion-text>
           </ion-col>
@@ -44,7 +41,7 @@
         <ion-row>
           <ion-col size="12">
       <ion-item lines="full">
-        <ion-label position="floating">Data de expiração</ion-label>
+        <ion-label position="floating">Data de expiração (MM/AA)</ion-label>
         <ion-input type="any" formControlName="dataExp" placeholder="Data de expiração" required></ion-input>
       </ion-item>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.dataExp.errors?.required">
@@ -60,18 +57,14 @@
           <ion-col size="12">
       <ion-item lines="full">
         <ion-label position="floating">CVV</ion-label>
-        <ion-input type="number" formControlName="cVV" placeholder="CVV" required></ion-input>
+        <ion-input maxlength="3" type="number" formControlName="cVV" placeholder="CVV" required></ion-input>
       </ion-item>
       <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.required">
         CVV necessário
       </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.max">
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.pattern">
         O CVV deve ter 3 digitos
       </ion-text>
-      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cVV.errors?.min">
-        O CVV deve ter 3 digitos
-      </ion-text>
-      
           </ion-col>
         </ion-row>
 
