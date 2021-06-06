@@ -16,12 +16,12 @@ export class ShowFiltrosPage implements OnInit {
     this.itemServ.getFiltragem().subscribe( itens => {
       this.itens = itens;
     });
-   console.log(this.itens) 
+   console.log(this.itens)
 
   }
 
   cardClick(rota: string, numero: string) {
-    this.itemServ.goRota(rota, numero);
+    this.itemServ.goRotaFiltros(rota, numero);
   }
 
 }

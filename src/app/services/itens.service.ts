@@ -9,6 +9,7 @@ export class ItensService {
 
   private itens: any[] = [];
   private carrinho = [];
+  private itensFiltrados: any[] = [];
 
   constructor(private router: Router, private rotaAtiva: ActivatedRoute) {
   }
@@ -32,6 +33,17 @@ export class ItensService {
       state: {
         key: id,
         item: this.itens[id]
+      }
+    }
+
+    this.router.navigate([rota], extras);
+  }
+
+  goRotaFiltros(rota: string, id: string){
+    const extras: NavigationExtras = {
+      state: {
+        key: id,
+        item: this.itensFiltrados[id]
       }
     }
 
@@ -91,28 +103,28 @@ export class ItensService {
   // A função "filtra" vai comparar os itens filtrados com as propriedades de cada produto e retornar apenas os produtos com propriedades em comum com os filtros.
   filtra(filtros: any) {
 
-    var itensFiltrados: any[] = [];
+    this.itensFiltrados = [];
 
     Object.keys(this.itens).forEach(key => {
       filtros.marcas.forEach(marca => {
-        if(this.itens[key].marca === marca && !itensFiltrados.includes(this.itens[key])){
-          itensFiltrados.push(this.itens[key]);
+        if(this.itens[key].marca === marca && !this.itensFiltrados.includes(this.itens[key])){
+          this.itensFiltrados.push(this.itens[key]);
         }
       });
       filtros.processadores.forEach(process => {
-        if(this.itens[key].processador === process && !itensFiltrados.includes(this.itens[key])){
-          itensFiltrados.push(this.itens[key]);
+        if(this.itens[key].processador === process && !this.itensFiltrados.includes(this.itens[key])){
+          this.itensFiltrados.push(this.itens[key]);
         }
       });
       filtros.ram.forEach(ram => {
-        if(this.itens[key].memoria === ram && !itensFiltrados.includes(this.itens[key])){
-          itensFiltrados.push(this.itens[key]);
+        if(this.itens[key].memoria === ram && !this.itensFiltrados.includes(this.itens[key])){
+          this.itensFiltrados.push(this.itens[key]);
         }
       });
     });
 
-    console.log(itensFiltrados)
+    console.log(this.itensFiltrados)
 
-    return itensFiltrados;
+    return this.itensFiltrados;
   }
 }
