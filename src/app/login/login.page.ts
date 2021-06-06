@@ -22,6 +22,7 @@ export class LoginPage implements OnInit {
       this.menuCtrl.enable(false);
    }
 
+   //A função "ngOnInit" define quais são as validações a serem feitas para que o utilizador consiga continuar.
   ngOnInit() {
     this.LoginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z]+\\.[a-z]{2,4}$')]],
@@ -29,6 +30,7 @@ export class LoginPage implements OnInit {
     });
   }
 
+  // A função "submitForm" verifica se todos os requesitos impostos pelo "Reactive Form" são cumpridos, e se fôr esse o caso leva o utilizador para outro ecrã.
   submitForm(){
     this.isSubmitted = true;
     if(!this.LoginForm.valid){
@@ -43,6 +45,7 @@ export class LoginPage implements OnInit {
     return this.LoginForm.controls;
   }
 
+  // A função "onClick" leva o utilizador a outro ecrã.
   onClick () {
     this.routing.navigate(['/registo']);
   }

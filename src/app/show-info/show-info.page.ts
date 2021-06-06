@@ -19,6 +19,7 @@ export class ShowInfoPage implements OnInit {
     this.itemServ.getInfoItem().subscribe(data => {
       this.data = data;
     })
+    console.log(this.data)
   }
 
   async onClick(id: string) {

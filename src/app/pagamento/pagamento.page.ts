@@ -26,15 +26,17 @@ export class PagamentoPage implements OnInit {
     this.isSubmitted= false;
   }
 
+  // A função "ngOnInit" define quais as validações a serem feitas na introdução dos dados do metodo de pagamento.
   ngOnInit() {
     this.MetodosForm= this.formBuilder.group({
         numCartao: ['', [Validators.required, Validators.pattern('^[0-9]{16}$')]],
-        dataExp: ['', [Validators.required, Validators.pattern('^[0-3]+[1-9]+/+[0-1]+[0-9]$')]],
+        dataExp: ['', [Validators.required, Validators.pattern('^[0-3]+[0-9]+/+[0-1]+[0-9]$')]],
         cVV:['', [Validators.required, Validators.pattern('^[0-9]{3}$')]],
         nomeProp:['', [Validators.required]]
     });
   }
 
+  // A função "onChange" vai mudar o que se apresenta ao utilizador para a inserção de dados dependendo de qual metodo de pagamento ele selecionar.
   onChange($event) {
     if($event.target.value == 'cartao'){
       this.cartao = true;
@@ -59,6 +61,7 @@ export class PagamentoPage implements OnInit {
     }
   }
 
+  // A função "submitForm" verifica se todos os requesitos impostos pelo "Reactive Form" são cumpridos, se fôr esse o caso guarda as informações do metodo de pagamento adicionado, informa o utilizador que o metodo foi adicionado e redireciona-o para outro ecrã.
   async submitForm(){
     this.isSubmitted = true;
     if(!this.MetodosForm.valid){

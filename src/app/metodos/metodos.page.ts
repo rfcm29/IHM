@@ -18,6 +18,7 @@ export class MetodosPage implements OnInit {
   ngOnInit() {
   }
 
+  // A função "ionViewWillEnter" mostra os dados dos metodos de pagamento adicionados.
   ionViewWillEnter() {
     this.pagamentoServ.getPagamento().subscribe(data => {
       this.metodo = data;
@@ -25,6 +26,7 @@ export class MetodosPage implements OnInit {
     console.log(this.metodo);
   }
 
+  // A função "onClick" leva o utilizador para outro ecrã onde pode adicionar metodos de pagamento.
   onClick(){
     this.routing.navigate(["/pagamento"]);
   }

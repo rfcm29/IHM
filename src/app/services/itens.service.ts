@@ -13,6 +13,7 @@ export class ItensService {
   constructor(private router: Router, private rotaAtiva: ActivatedRoute) {
   }
 
+  // A função "getItens" vai retornar todos os itens do ficheiro JSON.
   getItens() {
     return new Observable (observer => {
       fetch('./assets/data/itens.json')
@@ -25,6 +26,7 @@ export class ItensService {
     })
   }
 
+  // A função "goRota" vai passar as informações de cada produto para outro ecrã.
   goRota(rota: string, id: string){
     const extras: NavigationExtras = {
       state: {
@@ -36,6 +38,7 @@ export class ItensService {
     this.router.navigate([rota], extras);
   }
 
+  // A função "getInfoItem" mostra as informações do produto no ecrã.
   getInfoItem() {
     return new Observable (observer => {
       this.rotaAtiva.queryParams.subscribe(params =>{
@@ -48,10 +51,12 @@ export class ItensService {
     })
   }
 
+  // A função "putItem" armazena as informações do produto ao carrinho.
   putItem(id: string) {
     this.carrinho.push(this.itens[id]);
   }
 
+  // A função "getCarrinho" mostra a informação do produto no carrinho.
   getCarrinho() {
     return new Observable (observer => {
         observer.next(this.carrinho);
@@ -59,6 +64,7 @@ export class ItensService {
     })
   }
 
+  // A função "goFiltros" vai, armazenar quais os filtros e reencaminhar para a pagina com os itens filtrados.
   goFiltros(rota: string, filtros: any) {
     const extras: NavigationExtras = {
       state: {
@@ -69,6 +75,7 @@ export class ItensService {
     this.router.navigate([rota], extras);
   }
 
+  // A função "getFiltragem" vai retornar todos os itens filtrados.
   getFiltragem() {
     return new Observable (observer => {
       this.rotaAtiva.queryParams.subscribe(params =>{
@@ -81,6 +88,7 @@ export class ItensService {
     })
   }
 
+  // A função "filtra" vai comparar os itens filtrados com as propriedades de cada produto e retornar apenas os produtos com propriedades em comum com os filtros.
   filtra(filtros: any) {
 
     var itensFiltrados: any[] = [];

@@ -25,6 +25,7 @@ export class FiltrosPage implements OnInit {
   ngOnInit() {
   }
 
+  // A função "onChange" vai armazenar dentro de cada "tipo" os filtros selecionados.
   onChange($event, tipo){
     if(tipo == "marcas"){
       this.filtro.marcas = $event.target.value
@@ -37,6 +38,7 @@ export class FiltrosPage implements OnInit {
     }
   }
 
+  // A função "onClick" vai aplicar os filtros selecionados.
   onClick() {
     this.serv.goFiltros("show-filtros", this.filtro);
   }

@@ -13,6 +13,7 @@ export class PerfilPage {
 
   constructor(private route: Router ) { }
 
+  // A função "onClick" redireciona o utilizador para outro ecrã.
   onClick(){
     this.route.navigate(['/metodos']);
   }

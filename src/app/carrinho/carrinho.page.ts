@@ -20,6 +20,7 @@ export class CarrinhoPage implements OnInit {
   ngOnInit() {
   }
 
+  // A função "onClick" vai adicionar um produto ao carrinho e notificar o utilizador dessa ação.
   async onClick() {
     if(this.carrinho.length == 0){
       const toast = await this.toastController.create({

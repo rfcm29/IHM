@@ -18,6 +18,7 @@ export class RegistoPage implements OnInit {
     this.isSubmitted= false;
    }
 
+   //A função "ngOnInit" define quais são as validações a serem feitas para que o utilizador consiga continuar.
   ngOnInit() {
     this.RegistoForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z]+\\.[a-z]{2,4}$')]],
@@ -25,6 +26,7 @@ export class RegistoPage implements OnInit {
     });
   }
 
+  // A função "submitForm" verifica se todos os requesitos impostos pelo "Reactive Form" foram cumpridos e sendo esse o caso redireciona o utilizador para outro ecrã.
   submitForm(){
     this.isSubmitted = true;
     if(!this.RegistoForm.valid){
@@ -39,12 +41,10 @@ export class RegistoPage implements OnInit {
     return this.RegistoForm.controls;
   }
 
+  // A função "onClick" redireciona o utilizador para outro ecrã.
   onClick () {
     this.router.navigate(['/login'])
   }
 
-  carrinhoClick() {
-    this.router.navigate(['/carrinho'])
-  }
 
 }

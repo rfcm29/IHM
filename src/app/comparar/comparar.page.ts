@@ -15,6 +15,7 @@ export class CompararPage implements OnInit {
   constructor(private itemServ: ItensService, private route: Router) {
    }
 
+   // A função "ngOnInit" vai mostrar os produtos e respetivas informações, armazenadas no ficheiro JSON, no ecrã. 
   ngOnInit() {
     if(this.route.getCurrentNavigation().extras.state) {
       this.id = this.route.getCurrentNavigation().extras.state.key;
@@ -24,6 +25,7 @@ export class CompararPage implements OnInit {
     });
   }
 
+  // A função "cardClick" vai levar o utilizador a outra pagina onde tera as propriedades dos 2 produtos selecionados lado a lado para que os possa comparar.
   cardClick(id) {
     console.log(this.itens);
     console.log(this.id);
