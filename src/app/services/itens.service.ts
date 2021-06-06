@@ -39,6 +39,7 @@ export class ItensService {
     this.router.navigate([rota], extras);
   }
 
+  // A função "goRotaFiltros" vai passar as informações de cada produto filtrado para outro ecrã.
   goRotaFiltros(rota: string, id: string){
     const extras: NavigationExtras = {
       state: {

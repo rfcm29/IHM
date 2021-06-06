@@ -18,10 +18,12 @@ export class AppComponent {
   ];
   constructor(private route: Router) {}
 
+  // A função "perfilClick" redireciona o utilizador para o seu perfil.
   perfilClick() {
     this.route.navigate(['/perfil']);
   }
 
+  // A função "carrinhoClick" redireciona o utilizador para o carrinho de compras.
   carrinhoClick() {
     this.route.navigate(['/carrinho']);
   }

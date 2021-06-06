@@ -2,6 +2,7 @@
   "1": {
     "marca": "Asus",
     "modelo": "k555ln",
+    "img": "../../assets/img/asus_k555ln.jpeg",
     "processador": "Intel i5",
     "memoria": "8 GB",
     "preco": "750€",
@@ -11,6 +12,7 @@
   "2": {
     "marca": "Asus",
     "modelo": "k555ln",
+    "img": "../../assets/img/asus_k555ln.jpeg",
     "processador": "Intel i7",
     "memoria": "8 GB",
     "preco": "850€",
@@ -20,6 +22,7 @@
   "3": {
     "marca": "HP",
     "modelo": "k555ln",
+    "img": "../../assets/img/asus_k555ln.jpeg",
     "processador": "Intel i3",
     "memoria": "16 GB",
     "preco": "750€",
@@ -29,6 +32,7 @@
   "4": {
     "marca": "Lenovo",
     "modelo": "k555ln",
+    "img": "../../assets/img/asus_k555ln.jpeg",
     "processador": "Intel i5",
     "memoria": "8 GB",
     "preco": "750€",
@@ -38,6 +42,7 @@
   "5": {
     "marca": "Asus",
     "modelo": "k555ln",
+    "img": "../../assets/img/asus_k555ln.jpeg",
     "processador": "AMD Ryzen 7",
     "memoria": "32 GB",
     "preco": "1000€",
@@ -47,6 +52,7 @@
   "6": {
     "marca": "DELL",
     "modelo": "k555ln",
+    "img": "../../assets/img/asus_k555ln.jpeg",
     "processador": "Intel i3",
     "memoria": "8 GB",
     "preco": "500€",

@@ -15,6 +15,7 @@ export class ShowInfoPage implements OnInit {
   constructor(private itemServ: ItensService, private toastController: ToastController, private route: Router, public alertController: AlertController) {
   }
 
+  // A função "ngOnInit" vai mostrar as informações do produto.
   ngOnInit() {
     this.itemServ.getInfoItem().subscribe(data => {
       this.data = data;
@@ -22,6 +23,7 @@ export class ShowInfoPage implements OnInit {
     console.log(this.data)
   }
 
+  // A função "onClick" vai adicionar o produto ao carrinho e informar o utilizador dessa ação, dando-lhe a opção de continuar a comprar ou ir para o carrinho finalizar a compra.
   async onClick(id: string) {
     this.itemServ.putItem(id);
 
@@ -53,6 +55,7 @@ export class ShowInfoPage implements OnInit {
     */
   }
 
+  // A função "comparar" redireciona o utilizador para ontro ecrã onde pode selecionar outro produto para comparar com os produto anteriormente selecionado.
   comparar(){
     const extras: NavigationExtras = {
       state: {
