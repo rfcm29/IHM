@@ -65,8 +65,8 @@ export class ItensService {
   }
 
   // A função "putItem" armazena as informações do produto ao carrinho.
-  putItem(id: string) {
-    this.carrinho.push(this.itens[id]);
+  putItem(item: any) {
+    this.carrinho.push(item);
   }
 
   // A função "getCarrinho" mostra a informação do produto no carrinho.

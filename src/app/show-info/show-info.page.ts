@@ -24,8 +24,8 @@ export class ShowInfoPage implements OnInit {
   }
 
   // A função "onClick" vai adicionar o produto ao carrinho e informar o utilizador dessa ação, dando-lhe a opção de continuar a comprar ou ir para o carrinho finalizar a compra.
-  async onClick(id: string) {
-    this.itemServ.putItem(id);
+  async onClick() {
+    this.itemServ.putItem(this.data.item);
 
     const alert = await this.alertController.create({
       message: 'Item adicionado ao carrinho.',
